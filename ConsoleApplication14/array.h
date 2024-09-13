@@ -1,21 +1,22 @@
-#ifndef ARRAY_H
-#define ARRAY_H
-#include "number.h"
-#include <vector>
+#ifndef ARRAY_H 
+#define ARRAY_H 
+#include "number.h" 
+#include <vector> 
 
 class Array
 {
-public:
-	Array();
-	Array(int n);
-	~Array();
-	void averAndSko();
-
-	void print();
-protected:
 	int size;
 	number* elements;
+public:
+	Array(int n);
 
+	void insertElem();
+	void midAndSKO();
+	void insertionSortAbove();
+	void insertionSortBeyond();
+	void changeSize(int newSize);
+	void changeElement(number elem, int index);
+	void print();
 };
 
-#endif // ARRAY_H
+#endif // ARRAY_H 

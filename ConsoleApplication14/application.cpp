@@ -6,15 +6,19 @@ using namespace std;
 
 Application::Application()
 {
-    Array arr;
-    //ok
+    setlocale(LC_ALL, "RU");
 }
 
 void Application::showMenu()
 {
     int choise = 0;
-    while(choise != 7)
+    int n = 0;
+    cout << "Введите размер массива: ";
+    cin >> n;
+    Array arr(n);
+    while (choise != 7)
     {
+        system("cls");
         cout << "Меню:\n";
         cout << "1. Ввод элементов массива с консоли\n";
         cout << "2. Рассчет среднего и СКО элементов массива\n";
@@ -22,79 +26,106 @@ void Application::showMenu()
         cout << "4. Изменение размерности массива\n";
         cout << "5. Изменение элемента массива\n";
         cout << "6. Вывод элементов массива\n";
-        cout << "7. Выход\n";
-        
+        cout << "7. Выход\n\n";
+        cout << "Команда: ";
         cin >> choise;
 
         switch (choise)
         {
         case 1:
             system("cls");
-            inputArray();
+            inputArray(arr);
             break;
         case 2:
             system("cls");
-            calculateDeterminant();
+            calculateDeterminant(arr);
             break;
         case 3:
             system("cls");
-            sortArray();
+            sortArray(arr);
             break;
         case 4:
             system("cls");
-            changeSize();
+            changeSize(arr);
             break;
         case 5:
             system("cls");
-            changeElem();
+            changeElem(arr);
             break;
         case 6:
             system("cls");
-            printArray();
+            printArray(arr);
             break;
         case 7:
             system("cls");
-            cout << "До встречи!";
-            exit(0);
             break;
         default:
             system("cls");
-            cout << "Неправильный ввод, попробуйте еще.\n";
+            cout << "Ошибка, нет команды с таким номером.\n";
+            system("pause");
+            system("cls");
         }
     }
 }
 
-void Application::inputArray() {
-    int n;
-    cout << "Введите размер массива: ";
-    cin >> n;
-    
+void Application::inputArray(Array arr) {
+    cout << "Введите элементы: ";
+    arr.insertElem();
 }
 
-void Application::calculateDeterminant() {
-    arr.averAndSko();
+void Application::calculateDeterminant(Array arr) {
+    arr.midAndSKO();
 }
 
-void Application::sortArray() {
-
+void Application::sortArray(Array arr) {
+    cout << "Выберите вариант сортировки:\n";
+    cout << "1. Сортировка по возрастанию\n";
+    cout << "2. Сортировка по убыванию\n";
+    int o;
+    cin >> o;
+    switch (o) {
+    case 1:
+        arr.insertionSortAbove();
+        system("cls");
+        cout << "Успешно!\n";
+        system("pause");
+        break;
+    case 2:
+        arr.insertionSortBeyond();
+        system("cls");
+        cout << "Успешно!\n";
+        system("pause");
+        break;
+    default:
+        system("cls");
+        cout << "Неверный номер команды.\n";
+        system("pause");
+        break;
+    }
 }
 
-void Application::changeSize() 
-{
-    int n;
-    cout << "Введите новый размер массива: ";
-    cin >> n;
+void Application::changeSize(Array arr) {
+    cout << "Введите измененный размер массива: ";
+    int a;
+    cin >> a;
+    system("cls");
+    arr.changeSize(a);
 }
 
-void Application::changeElem() 
-{
+void Application::changeElem(Array arr) {
+    cout << "Введите элемент, который хотите вставить в массив: ";
+    number elem;
+    cin >> elem;
+    cout << "\nВведите индекс:";
     int index;
-    cout << "Введите индекс элемента массива, который хотите изменить: ";
     cin >> index;
+    system("cls");
+    arr.changeElement(elem, index);
 }
 
-void Application::printArray()
-{
-    cout << "Массив: \n";
+void Application::printArray(Array arr) {
+    cout << "Исходный массив: ";
     arr.print();
+    system("pause");
+    system("cls");
 }

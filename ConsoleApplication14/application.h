@@ -7,14 +7,13 @@ class Application
 public:
     Application();
 
-    Array arr;
     void showMenu();
-    void inputArray();
-    void calculateDeterminant();
-    void sortArray();
-    void changeSize();
-    void changeElem();
-    void printArray();
+    void inputArray(Array arr);
+    void calculateDeterminant(Array arr);
+    void sortArray(Array arr);
+    void changeSize(Array arr);
+    void changeElem(Array arr);
+    void printArray(Array arr);
 };
 
 #endif // APPLICATION_H

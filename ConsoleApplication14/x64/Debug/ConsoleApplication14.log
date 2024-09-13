@@ -1,0 +1,4 @@
+﻿  array.cpp
+C:\Users\chvan\source\repos\ConsoleApplication14\ConsoleApplication14\array.cpp(44,11): warning C4244: инициализация: преобразование "number" в "int", возможна потеря данных
+C:\Users\chvan\source\repos\ConsoleApplication14\ConsoleApplication14\array.cpp(58,11): warning C4244: инициализация: преобразование "number" в "int", возможна потеря данных
+  ConsoleApplication14.vcxproj -> C:\Users\chvan\source\repos\ConsoleApplication14\x64\Debug\ConsoleApplication14.exe
