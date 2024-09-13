@@ -7,7 +7,7 @@ using namespace std;
 Application::Application()
 {
     Array arr;
-    
+    //ok
 }
 
 void Application::showMenu()
