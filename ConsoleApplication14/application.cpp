@@ -54,10 +54,12 @@ void Application::showMenu()
             break;
         case 7:
             system("cls");
+            cout << "До встречи!";
+            exit(0);
             break;
         default:
             system("cls");
-            cout << "Invalid choice, try again.\n";
+            cout << "Неправильный ввод, попробуйте еще.\n";
         }
     }
 }
@@ -70,21 +72,29 @@ void Application::inputArray() {
 }
 
 void Application::calculateDeterminant() {
-
+    arr.averAndSko();
 }
 
 void Application::sortArray() {
 
 }
 
-void Application::changeSize() {
-
+void Application::changeSize() 
+{
+    int n;
+    cout << "Введите новый размер массива: ";
+    cin >> n;
 }
 
-void Application::changeElem() {
-
+void Application::changeElem() 
+{
+    int index;
+    cout << "Введите индекс элемента массива, который хотите изменить: ";
+    cin >> index;
 }
 
-void Application::printArray() {
-
+void Application::printArray()
+{
+    cout << "Массив: \n";
+    arr.print();
 }

@@ -7,7 +7,7 @@ class Application
 public:
     Application();
 
-    Array array;
+    Array arr;
     void showMenu();
     void inputArray();
     void calculateDeterminant();

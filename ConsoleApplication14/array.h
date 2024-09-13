@@ -9,6 +9,7 @@ public:
 	Array();
 	Array(int n);
 	~Array();
+	void averAndSko();
 
 	void print();
 protected:
