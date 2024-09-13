@@ -2,18 +2,14 @@
 #define APPLICATION_H
 #include "array.h"
 
-class Application
+class TApplication
 {
 public:
-    Application();
+    TApplication();
+    int exec();
 
-    void showMenu();
-    void inputArray(Array arr);
-    void calculateDeterminant(Array arr);
-    void sortArray(Array arr);
-    void changeSize(Array arr);
-    void changeElem(Array arr);
-    void printArray(Array arr);
+private:
+    int menu();
 };
 
 #endif // APPLICATION_H

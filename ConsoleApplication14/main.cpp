@@ -6,6 +6,6 @@ using namespace std;
 int main()
 {
     setlocale(LC_ALL, "RU");
-    Application app;
-    app.showMenu();
+    TApplication app;
+    app.exec();
 }

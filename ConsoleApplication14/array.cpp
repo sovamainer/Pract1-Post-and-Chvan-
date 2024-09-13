@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Array::Array(int n) {
+TArray::TArray(int n) {
 	size = n;
 	elements = new number[size];
 	for (int i = 0; i < size; i++) {
@@ -12,14 +12,14 @@ Array::Array(int n) {
 	}
 }
 
-void Array::insertElem() {
+void TArray::insertElem() {
 	for (int i = 0; i < size; i++) {
 		cin >> elements[i];
 	}
 	system("cls");
 }
 
-void Array::midAndSKO() {
+void TArray::midAndSKO() {
 	number sum = 0;
 	number average = 0;
 	number sumSko = 0;
@@ -33,13 +33,13 @@ void Array::midAndSKO() {
 	{
 		sumSko += sumSko + (elements[i] - average) * (elements[i] - average);
 	}
-	sko = sqrt(1 / (size - 1) * sumSko);
+	sko = sqrt((number)1 / (size - 1) * sumSko);
 	cout << "Среднее: " << average << "\n";
 	cout << "СКО: " << sko << "\n";
 	system("pause");
 }
 
-void Array::insertionSortAbove() {
+void TArray::insertionSortAbove() {
 	for (int i = 1; i < size; i++) {
 		int key = elements[i];
 		int j = i - 1;
@@ -53,7 +53,7 @@ void Array::insertionSortAbove() {
 	}
 }
 
-void Array::insertionSortBeyond() {
+void TArray::insertionSortBeyond() {
 	for (int i = 1; i < size; i++) {
 		int key = elements[i];
 		int j = i - 1;
@@ -66,9 +66,8 @@ void Array::insertionSortBeyond() {
 	}
 }
 
-void Array::changeSize(int newSize) {
+void TArray::changeSize(int newSize) {
 	number* newElements = new number[newSize];
-
 	for (int i = 0; i < (newSize < size ? newSize : size); i++) {
 		newElements[i] = elements[i];
 	}
@@ -86,14 +85,13 @@ void Array::changeSize(int newSize) {
 
 	elements = newElements;
 
-
 	size = newSize;
 
 	cout << "Размер массива изменен на " << newSize << " элементов.\n";
 	system("pause");
 }
 
-void Array::changeElement(number elem, int index) {
+void TArray::changeElement(number elem, int index) {
 	if (index >= 0 && index <= size - 1) {
 		elements[index] = elem;
 		cout << "Успешно!\n";
@@ -104,9 +102,14 @@ void Array::changeElement(number elem, int index) {
 	system("pause");
 }
 
-void Array::print() {
+void TArray::print() {
 	for (int i = 0; i < size; i++) {
 		cout << elements[i] << " ";
 	}
 	cout << endl;
+}
+
+TArray::~TArray()
+{
+	delete[] elements;
 }

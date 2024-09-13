@@ -1,21 +1,20 @@
 #ifndef ARRAY_H 
 #define ARRAY_H 
 #include "number.h" 
-#include <vector> 
 
-class Array
+class TArray
 {
 	int size;
 	number* elements;
 public:
-	Array(int n);
-
+	TArray(int n);
+	~TArray();
 	void insertElem();
 	void midAndSKO();
 	void insertionSortAbove();
 	void insertionSortBeyond();
 	void changeSize(int newSize);
-	void changeElement(number elem, int index);
+	void changeElement(number, int);
 	void print();
 };
 
