@@ -4,8 +4,7 @@
 
 class TArray
 {
-	int size;
-	number* elements;
+	
 public:
 	TArray(int n);
 	~TArray();
@@ -16,6 +15,10 @@ public:
 	void changeSize(int newSize);
 	void changeElement(number, int);
 	void print();
+private:
+	int size;
+	number* elements;
 };
+
 
 #endif // ARRAY_H 

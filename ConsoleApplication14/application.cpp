@@ -18,20 +18,18 @@ int TApplication::exec()
     TArray arr(n);
     while (true)
     {
+        system("cls");
         ch = menu();
         switch (ch)
         {
         case 1:
-            system("cls");
             cout << "Введите элементы: ";
             arr.insertElem();
             break;
         case 2:
-            system("cls");
             arr.midAndSKO();
             break;
         case 3:
-            system("cls");
             cout << "Выберите вариант сортировки:\n";
             cout << "1. Сортировка по возрастанию\n";
             cout << "2. Сортировка по убыванию\n";
@@ -58,15 +56,13 @@ int TApplication::exec()
             }
             break;
         case 4:
-            system("cls");
             cout << "Введите измененный размер массива: ";
             int newSize;
             cin >> newSize;
-            system("cls");
+            
             arr.changeSize(newSize);
             break;
         case 5:
-            system("cls");
             cout << "Введите элемент, который хотите вставить в массив: ";
             number elem;
             cin >> elem;
@@ -77,7 +73,6 @@ int TApplication::exec()
             arr.changeElement(elem, index);
             break;
         case 6:
-            system("cls");
             cout << "Массив: ";
             arr.print();
             system("pause");
