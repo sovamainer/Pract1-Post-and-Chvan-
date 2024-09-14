@@ -31,7 +31,7 @@ void TArray::midAndSKO() {
 	average = sum / size;
 	for (int i = 0; i < size; i++)
 	{
-		sumSko += sumSko + (elements[i] - average) * (elements[i] - average);
+		sumSko += (elements[i] - average) * (elements[i] - average);
 	}
 	sko = sqrt((number)1 / (size - 1) * sumSko);
 	cout << "Среднее: " << average << "\n";
