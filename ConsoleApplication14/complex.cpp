@@ -61,6 +61,8 @@ TComplex& TComplex::operator= (TComplex c)
 {
 	re = c.re;
 	im = c.im;
+	r_abs = c.r_abs;
+	phi = c.phi;
 	return *this;
 }
 
@@ -68,6 +70,8 @@ TComplex& TComplex::operator+= (TComplex c)
 {
 	re = re + c.re;
 	im = im + c.im;
+	r_abs = c.r_abs;
+	phi = c.phi;
 	return *this;
 }
 
@@ -132,12 +136,14 @@ TComplex sqrt(TComplex c)
 
 ostream& operator <<(ostream& os, TComplex c)
 {
-	os << c.re << "+" << c.im << "i";
+	os << c.re << "+" << c.im << "i" << " " << c.r_abs << " " << c.phi;
 	return os;
 }
 
 istream& operator >>(istream& is, TComplex& c)
 {
 	is >> c.re >> c.im;
+	c.r_abs = c.re * c.re + c.im * c.im;
+	c.phi = asin(c.im / c.r_abs);
 	return is;
 }
