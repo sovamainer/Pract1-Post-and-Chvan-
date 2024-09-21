@@ -41,7 +41,7 @@ void TArray::midAndSKO() {
 
 void TArray::insertionSortAbove() {
 	for (int i = 1; i < size; i++) {
-		int key = elements[i];
+		number key = elements[i];
 		int j = i - 1;
 
 
@@ -55,7 +55,7 @@ void TArray::insertionSortAbove() {
 
 void TArray::insertionSortBeyond() {
 	for (int i = 1; i < size; i++) {
-		int key = elements[i];
+		number key = elements[i];
 		int j = i - 1;
 
 		while (j >= 0 && elements[j] < key) {

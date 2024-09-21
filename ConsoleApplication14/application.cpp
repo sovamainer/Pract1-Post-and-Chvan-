@@ -20,6 +20,7 @@ int TApplication::exec()
     {
         system("cls");
         ch = menu();
+        number elem;
         switch (ch)
         {
         case 1:
@@ -64,7 +65,7 @@ int TApplication::exec()
             break;
         case 5:
             cout << "¬ведите элемент, который хотите вставить в массив: ";
-            number elem;
+            
             cin >> elem;
             cout << "\n¬ведите индекс:";
             int index;
