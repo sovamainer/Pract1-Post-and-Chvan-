@@ -129,8 +129,8 @@ bool TComplex::operator< (TComplex c)
 TComplex sqrt(TComplex c)
 {
 	TComplex c1;
-	c1.re = pow(pow(c.re * c.re + c.im * c.im, 2) + c.re, 2) / 2;
-	c1.im = pow(pow(c.re * c.re + c.im * c.im, 2) - c.re, 2) / 2;
+	c1.re = pow(pow(c.re * c.re + c.im * c.im, 0.5) + c.re, 0.5) / 2;
+	c1.im = pow(pow(c.re * c.re + c.im * c.im, 0.5) - c.re, 0.5) / 2;
 	return c1;
 }
 
