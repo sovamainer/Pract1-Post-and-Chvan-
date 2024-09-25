@@ -22,12 +22,12 @@ public:
 	bool operator< (TComplex);
 
 	friend TComplex sqrt(TComplex);
-	double re;
-	double im;
-
+	
 	friend ostream& operator <<(ostream&, TComplex);
 	friend istream& operator >>(istream&, TComplex&);
 private:
+	double re;
+	double im;
 	double r_abs;
 	double phi;
 };

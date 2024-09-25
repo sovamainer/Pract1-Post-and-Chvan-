@@ -136,7 +136,7 @@ TComplex sqrt(TComplex c)
 
 ostream& operator <<(ostream& os, TComplex c)
 {
-	os << c.re << "+" << c.im << "i" << " " << c.r_abs << " " << c.phi;
+	os << c.re << "+" << c.im << "i";
 	return os;
 }
 
