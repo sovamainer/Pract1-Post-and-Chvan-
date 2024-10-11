@@ -6,6 +6,7 @@ class TArray
 {
 	
 public:
+	TArray();
 	TArray(int n);
 	~TArray();
 	void insertElem();
@@ -15,6 +16,8 @@ public:
 	void changeSize(int newSize);
 	void changeElement(number, int);
 	void print();
+	int getSize();
+	number getElem(int);
 private:
 	int size;
 	number* elements;

@@ -80,6 +80,11 @@ bool TComplex::operator== (TComplex c)
 	return (re = c.re) && (im = c.im);
 }
 
+bool TComplex::operator!= (TComplex c)
+{
+	return !((re = c.re) && (im = c.im));
+}
+
 bool TComplex::operator> (TComplex c)
 {
 	if (r_abs >= c.r_abs)

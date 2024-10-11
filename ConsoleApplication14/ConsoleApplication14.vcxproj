@@ -131,12 +131,14 @@
     <ClCompile Include="complex.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="application.cpp" />
+    <ClCompile Include="polynom.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="application.h" />
     <ClInclude Include="array.h" />
     <ClInclude Include="complex.h" />
     <ClInclude Include="number.h" />
+    <ClInclude Include="polynom.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

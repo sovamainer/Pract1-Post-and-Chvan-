@@ -4,6 +4,12 @@
 
 using namespace std;
 
+TArray::TArray()
+{
+	size = 0;
+	elements = nullptr;
+}
+
 TArray::TArray(int n) {
 	size = n;
 	elements = new number[size];
@@ -107,6 +113,16 @@ void TArray::print() {
 		cout << elements[i] << " ";
 	}
 	cout << endl;
+}
+
+int TArray::getSize()
+{
+	return size;
+}
+
+number TArray::getElem(int index)
+{
+	return elements[index];
 }
 
 TArray::~TArray()

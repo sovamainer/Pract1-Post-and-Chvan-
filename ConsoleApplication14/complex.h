@@ -18,6 +18,7 @@ public:
 	TComplex& operator= (TComplex);
 	TComplex& operator+= (TComplex);
 	bool operator == (TComplex);
+	bool operator != (TComplex);
 	bool operator> (TComplex);
 	bool operator< (TComplex);
 
