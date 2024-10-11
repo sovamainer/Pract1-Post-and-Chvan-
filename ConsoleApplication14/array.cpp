@@ -93,19 +93,19 @@ void TArray::changeSize(int newSize) {
 
 	size = newSize;
 
-	cout << "Размер массива изменен на " << newSize << " элементов.\n";
-	system("pause");
+	//cout << "Размер массива изменен на " << newSize << " элементов.\n";
+	//system("pause");
 }
 
 void TArray::changeElement(number elem, int index) {
 	if (index >= 0 && index <= size - 1) {
 		elements[index] = elem;
-		cout << "Успешно!\n";
+		//cout << "Успешно!\n";
 	}
 	else {
 		cout << "Элемента с таким индексом не существует\n";
 	}
-	system("pause");
+	//system("pause");
 }
 
 void TArray::print() {

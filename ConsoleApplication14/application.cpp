@@ -1,6 +1,7 @@
 #include <iostream>
 #include "application.h"
 #include "array.h"
+#include "polynom.h"
 
 using namespace std;
 
@@ -103,6 +104,105 @@ int TApplication::menu()
     cout << "5. Изменение элемента массива\n";
     cout << "6. Вывод элементов массива\n";
     cout << "7. Выход\n\n";
+    cout << "Команда: ";
+    cin >> choise;
+    return choise;
+}
+
+
+int TApplication::execPolynom()
+{
+    int ch = 0;
+    TPolynom pol;
+    int option;
+    number x;
+    int newSize;
+    int index;
+    number newRoot;
+    number newCoeff;
+    while (true)
+    {
+        system("cls");
+        ch = menuPolynom();
+        number elem;
+        switch (ch)
+        {
+        case 1:
+            pol.input();
+            break;
+        case 2:
+            system("cls");
+            cout << "Что Вы хотите изменить?\n0. Старший коэффициент\n1. Один из корней\n";
+            cin >> option;
+            if (option)
+            {
+                cout << "Введите индекс корня, который Вы хотите изменить: ";
+                cin >> index;
+                cout << "Введите новое значение корня по выбранному индексу: ";
+                cin >> newRoot;
+                pol.changeRoot(index, newRoot);
+                cout << "Успешно!\n";
+            }
+            else
+            {
+                cout << "Введите новое значение старшего коэффициента: ";
+                cin >> newCoeff;
+                pol.changeCoeff(newCoeff);
+                cout << "Успешно!\n";
+            }
+            system("pause");
+            break;
+        case 3:
+            system("cls");
+            cout << "В какой точке Вы хотите вычислить значение полинома?\n";
+            cin >> x;
+            pol.calcPolynom(x);
+            system("pause");
+            break;
+        case 4:
+            cout << "Введите измененный размер массива: ";
+            cin >> newSize;
+
+            pol.changeRootSize(newSize);
+            system("pause");
+            break;
+        case 5:
+            system("cls");
+            cout << "В какой форме вывести полином?\n0. В каноническом виде\n1. В виде произведения скобок\n ";
+            cin >> option;
+            if (option)
+            {
+                pol.printSecond();
+            }
+            else
+            {
+                pol.printFirst();
+            }
+            system("pause");
+            break;
+        case 6:
+            system("cls");
+            exit(0);
+            break;
+        default:
+            system("cls");
+            cout << "Ошибка, нет команды с таким номером.\n";
+            system("pause");
+            system("cls");
+        }
+    }
+}
+
+int TApplication::menuPolynom()
+{
+    int choise = 0;
+    cout << "Меню:\n";
+    cout << "1. Ввод старшего коэффициента и корней полинома с консоли\n";
+    cout << "2. Изменить старший коэффициент или один из корней по индексу\n";
+    cout << "3. Вычислить значение полинома в заданной точке\n";
+    cout << "4. Изменение размерности массива\n";
+    cout << "5. Вывод полинома\n";
+    cout << "6. Выход\n\n";
     cout << "Команда: ";
     cin >> choise;
     return choise;

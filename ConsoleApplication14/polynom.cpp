@@ -64,10 +64,55 @@ void TPolynom::printFirst()
 
 void TPolynom::printSecond()
 {
-
+	cout << seniorCoeff;
+	int degree = roots.getSize();
+	for (int i = degree - 1; i >= 0; i--)
+	{
+		cout << "(x - " << roots.getElem(i) << ")";
+	}
 }
 
 number TPolynom::calcPolynom(number x)
 {
+	number res = 0;
+	int degree = coeffs.getSize() - 1;
+	for (int i = degree; i >= 0; i--)
+	{
+		res = res * x + coeffs.getElem(i);
+	}
+	return res;
+}
 
+void TPolynom::input()
+{
+	cout << "Введите коэффициент an: ";
+	cin >> seniorCoeff;
+	int n;
+	cout << "Введите количество корней полинома: ";
+	cin >> n;
+	roots.changeSize(n);
+	cout << "Введите корни полинома: ";
+	for (int i = 0; i < n; i++)
+	{
+		number root;
+		cin >> root;
+		roots.changeElement(root, i);
+	}
+	calcCoeff();
+}
+
+void TPolynom::changeCoeff(number newCoeff)
+{
+	seniorCoeff = newCoeff;
+}
+
+void TPolynom::changeRoot(int index, number newRoot)
+{
+	coeffs.changeElement(newRoot, index);
+}
+
+void TPolynom::changeRootSize(int newSize)
+{
+	roots.changeSize(newSize);
+	calcCoeff();
 }

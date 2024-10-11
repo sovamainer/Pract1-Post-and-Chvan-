@@ -12,6 +12,10 @@ public:
 	void printFirst();
 	void printSecond();
 	number calcPolynom(number);
+	void input();
+	void changeCoeff(number);
+	void changeRoot(int, number);
+	void changeRootSize(int);
 
 private:
 	TArray roots;

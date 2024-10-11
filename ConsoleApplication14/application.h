@@ -7,9 +7,11 @@ class TApplication
 public:
     TApplication();
     int exec();
+    int execPolynom();
 
 private:
     int menu();
+    int menuPolynom();
 };
 
 #endif // APPLICATION_H

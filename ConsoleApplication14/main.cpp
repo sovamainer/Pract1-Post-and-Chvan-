@@ -7,5 +7,5 @@ int main()
 {
     setlocale(LC_ALL, "RU");
     TApplication app;
-    app.exec();
+    app.execPolynom();
 }
