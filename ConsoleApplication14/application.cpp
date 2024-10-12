@@ -156,7 +156,7 @@ int TApplication::execPolynom()
             system("cls");
             cout << "В какой точке Вы хотите вычислить значение полинома?\n";
             cin >> x;
-            pol.calcPolynom(x);
+            cout << pol.calcPolynom(x);
             system("pause");
             break;
         case 4:

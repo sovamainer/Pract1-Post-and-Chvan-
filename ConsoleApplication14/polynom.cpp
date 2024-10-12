@@ -14,9 +14,9 @@ void TPolynom::calcCoeff()
 	int degree = roots.getSize();
 	coeffs.changeSize(degree + 1);
 	coeffs.changeElement(1, 1); // коэф. полинома первой степени
-	coeffs.changeElement(roots.getElem(0), 0);
+	coeffs.changeElement(roots.getElem(0) * (-1), 0);
 
-	for (int k = 2; k < degree; k++)
+	for (int k = 2; k <= degree; k++)
 	{
 		// коэф. полинома степени k
 		coeffs.changeElement(coeffs.getElem(k - 1), k);
@@ -108,7 +108,8 @@ void TPolynom::changeCoeff(number newCoeff)
 
 void TPolynom::changeRoot(int index, number newRoot)
 {
-	coeffs.changeElement(newRoot, index);
+	roots.changeElement(newRoot, index);
+	calcCoeff();
 }
 
 void TPolynom::changeRootSize(int newSize)
