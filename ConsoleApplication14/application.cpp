@@ -120,6 +120,7 @@ int TApplication::execPolynom()
     int index;
     number newRoot;
     number newCoeff;
+    pol.input();
     while (true)
     {
         system("cls");
@@ -127,9 +128,6 @@ int TApplication::execPolynom()
         switch (ch)
         {
         case 1:
-            pol.input();
-            break;
-        case 2:
             system("cls");
             cout << "Что Вы хотите изменить?\n0. Старший коэффициент\n1. Один из корней\n";
             cin >> option;
@@ -151,21 +149,21 @@ int TApplication::execPolynom()
             }
             system("pause");
             break;
-        case 3:
+        case 2:
             system("cls");
             cout << "В какой точке Вы хотите вычислить значение полинома?\n";
             cin >> x;
             cout << pol.calcPolynom(x);
             system("pause");
             break;
-        case 4:
+        case 3:
             cout << "Введите измененный размер массива: ";
             cin >> newSize;
 
             pol.changeRootSize(newSize);
             system("pause");
             break;
-        case 5:
+        case 4:
             system("cls");
             cout << "В какой форме вывести полином?\n0. В каноническом виде\n1. В виде произведения скобок\n ";
             cin >> option;
@@ -179,7 +177,7 @@ int TApplication::execPolynom()
             }
             system("pause");
             break;
-        case 6:
+        case 5:
             system("cls");
             exit(0);
             break;
@@ -196,12 +194,11 @@ int TApplication::menuPolynom()
 {
     int choise = 0;
     cout << "Меню:\n";
-    cout << "1. Ввод старшего коэффициента и корней полинома с консоли\n";
-    cout << "2. Изменить старший коэффициент или один из корней по индексу\n";
-    cout << "3. Вычислить значение полинома в заданной точке\n";
-    cout << "4. Изменение размерности массива\n";
-    cout << "5. Вывод полинома\n";
-    cout << "6. Выход\n\n";
+    cout << "1. Изменить старший коэффициент или один из корней по индексу\n";
+    cout << "2. Вычислить значение полинома в заданной точке\n";
+    cout << "3. Изменение размерности массива\n";
+    cout << "4. Вывод полинома\n";
+    cout << "5. Выход\n\n";
     cout << "Команда: ";
     cin >> choise;
     return choise;
