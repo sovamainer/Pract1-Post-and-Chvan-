@@ -124,7 +124,6 @@ int TApplication::execPolynom()
     {
         system("cls");
         ch = menuPolynom();
-        number elem;
         switch (ch)
         {
         case 1:
